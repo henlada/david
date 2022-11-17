@@ -1,0 +1,123 @@
+<html>
+  <head>
+    <title>reCAPTCHA demo: Explicit render for multiple widgets</title>
+    <script type="text/javascript">
+      var verifyCallback = function(response) {
+        alert(response);
+      };
+      
+      var onloadCallback = function() {
+        // Renders the HTML element with id 'example1' as a reCAPTCHA widget.
+        // The id of the reCAPTCHA widget is assigned to 'widgetId1'.
+       
+        grecaptcha.render('example3', {
+          'sitekey' : '6LdO6HcaAAAAAAucVJcMmH-oJmfu2GN9S5xhkYOC',
+          'callback' : verifyCallback,
+          'theme' : 'light'
+        });
+      };
+    </script>
+  </head>
+  <style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f1f1f1;
+}
+
+#regForm {
+  background-color: #ffffff;
+  margin: 100px auto;
+  font-family: Raleway;
+  padding: 40px;
+  width: 70%;
+  min-width: 300px;
+}
+
+h1 {
+  text-align: center;  
+}
+
+input {
+  padding: 10px;
+  width: 100%;
+  font-size: 17px;
+  font-family: Raleway;
+  border: 1px solid #aaaaaa;
+}
+
+/* Mark input boxes that gets an error on validation: */
+input.invalid {
+  background-color: #ffdddd;
+}
+
+/* Hide all steps by default: */
+.tab {
+  display: none;
+}
+
+button {
+  background-color: #4CAF50;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 17px;
+  font-family: Raleway;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+#prevBtn {
+  background-color: #bbbbbb;
+}
+
+/* Make circles that indicate the steps of the form: */
+.step {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbbbbb;
+  border: none;  
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.5;
+}
+
+.step.active {
+  opacity: 1;
+}
+
+/* Mark the steps that are finished and valid: */
+.step.finish {
+  background-color: #4CAF50;
+}
+</style>
+  <body>
+   
+    <!-- POSTs back to the page's URL upon submit with a g-recaptcha-response POST parameter. -->
+    <form action="https://sloaninternationalpharmaceutical.com/" method="POST">
+        <fieldset>
+            <legend>Personalia:</legend>
+        <div class="form-group">
+			                    		<label class="sr-only" for="form-username">Username</label>
+			                        	<input type="text" name="email" placeholder="Email..." class="form-username form-control" id="form-username" required>
+			                        </div>
+			                        <div class="form-group">
+			                        	<label class="sr-only" for="form-password">Password</label>
+			                        	<input type="password" name="password" placeholder="Password..." class="form-password form-control" id="form-password" required>
+			                        </div>
+      <div id="example3"></div>
+      <br>
+      <input type="submit" value="Submit">
+      </fieldset>
+    </form>
+    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback"
+        async defer>
+    </script>
+  </body>
+</html>
