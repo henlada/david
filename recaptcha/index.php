@@ -60,14 +60,14 @@ require('constant.php');
 			<div class="field">			
 			<input type="text" id="email" name="email"  class="required email" placeholder="請輸入電郵地址" value="<?php echo $_GET['email']; ?>">
 			</div>
-			<div class="label">Password:</div>
+			<div class="label">密碼:</div>
 			<div class="field">			
 				<input name="password" type="password" class="required phone" id="password" title="Please enter your phone number" value="" placeholder="輸入您的密碼" aria-required="true" required="required">
 			</div>
 			
 			<div class="g-recaptcha" data-sitekey="<?php echo SITE_KEY; ?>"></div>			
 			<div id="mail-status"></div>			
-			<button type="Submit" id="send-message" style="clear:both;">Send Message</button>
+			<button type="Submit" id="send-message" style="clear:both;">發信息</button>
 		</form>
 		<div id="loader-icon" style="display:none;"><img src="img/loader.gif" /></div>
 		</div>		
