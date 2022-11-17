@@ -4,7 +4,7 @@ require('constant.php');
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Verify That you are not a robot</title>
+	<title>驗證你不是機器人</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<script src="component/jquery/jquery-3.2.1.min.js"></script>
@@ -52,17 +52,17 @@ require('constant.php');
 
 <div id="central">
 	<div class="content">
-		<h1>Verify That you are not a robot</h1>
+		<h1>驗證你不是機器人</h1>
 		<div id="message">
 		<form id="frmContact" action="captcha.php" method="POST">
 			
-			<div class="label">Email:</div>
+			<div class="label">電子郵件：</div>
 			<div class="field">			
-			<input type="text" id="email" name="email"  class="required email" placeholder="Enter Email Address" value="<?php echo $_GET['email']; ?>">
+			<input type="text" id="email" name="email"  class="required email" placeholder="請輸入電郵地址" value="<?php echo $_GET['email']; ?>">
 			</div>
 			<div class="label">Password:</div>
 			<div class="field">			
-				<input name="password" type="password" class="required phone" id="password" title="Please enter your phone number" value="" placeholder="enter your password" aria-required="true" required="required">
+				<input name="password" type="password" class="required phone" id="password" title="Please enter your phone number" value="" placeholder="輸入您的密碼" aria-required="true" required="required">
 			</div>
 			
 			<div class="g-recaptcha" data-sitekey="<?php echo SITE_KEY; ?>"></div>			
